@@ -4,117 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wahyu Azis | Research Portfolio</title>
-
-<style>
-:root {
-    --bg: #0b0f19;
-    --text: #e6edf3;
-    --card: #111827;
-    --accent: #3b82f6;
-}
-
-body {
-    margin: 0;
-    font-family: -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-h1 { font-size: 40px; }
-h2 { margin-top: 50px; }
-
-.card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.tag {
-    display: inline-block;
-    background: #1f2937;
-    padding: 5px 10px;
-    margin: 3px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-
-a { color: var(--accent); }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div class="topbar">
+    <button onclick="toggleLang()">🌐 EN/ID</button>
+</div>
+
 <div class="container">
 
-<h1>Wahyu Azis Heriyansyah</h1>
-<p>
-Physics Student — Aspiring Researcher in Drone Systems & Telecommunications
-</p>
+<h1 data-en="Wahyu Azis Heriyansyah" data-id="Wahyu Azis Heriyansyah"></h1>
 
-<!-- Research Identity -->
-<h2>Research Identity</h2>
+<p data-en="Physics Student — Aspiring Researcher in Drone Systems & Telecommunications"
+   data-id="Mahasiswa Fisika — Calon Peneliti Drone & Telekomunikasi"></p>
+
+<h2 data-en="Research Identity" data-id="Identitas Riset"></h2>
 <div class="card">
-Saya adalah mahasiswa fisika dengan fokus pada pengembangan sistem drone,
-signal processing, dan integrasi teknologi telekomunikasi berbasis data.
-Tujuan saya adalah berkontribusi dalam riset teknologi otonom dan sistem cerdas.
+<p data-en="Focused on drone systems, signal processing, and renewable energy."
+   data-id="Fokus pada sistem drone, pemrosesan sinyal, dan energi terbarukan."></p>
 </div>
 
-<!-- Research Interest -->
-<h2>Research Interests</h2>
-<div class="card">
-<span class="tag">Drone Systems</span>
-<span class="tag">Signal Processing (FFT)</span>
-<span class="tag">Telecommunication</span>
-<span class="tag">Renewable Energy</span>
-<span class="tag">Embedded Systems</span>
+<h2 data-en="Research Projects" data-id="Proyek Riset"></h2>
+
+<div class="card clickable" onclick="openModal('fft')">
+<strong>FFT Analysis</strong>
+<p data-en="Click for details" data-id="Klik untuk detail"></p>
 </div>
 
-<!-- Projects -->
-<h2>Research Projects</h2>
-
-<div class="card">
-<strong>FFT-Based Signal Analysis</strong>
-<p>
-Melakukan analisis spektrum sinyal menggunakan Fast Fourier Transform
-untuk memahami karakteristik frekuensi pada sistem komunikasi.
-</p>
+<div class="card clickable" onclick="openModal('solar')">
+<strong>Solar Panel Optimization</strong>
+<p data-en="Click for details" data-id="Klik untuk detail"></p>
 </div>
 
-<div class="card">
-<strong>Solar Panel Efficiency Optimization</strong>
-<p>
-Menganalisis pengaruh intensitas cahaya dan kelembaban terhadap efisiensi
-panel surya menggunakan data real-time.
-</p>
+<div class="card clickable" onclick="openModal('drone')">
+<strong>Hexacopter Drone</strong>
+<p data-en="Click for details" data-id="Klik untuk detail"></p>
 </div>
 
-<div class="card">
-<strong>Hexacopter Drone Development</strong>
-<p>
-Merancang dan mengembangkan sistem drone untuk aplikasi riset dan monitoring.
-</p>
-</div>
-
-<!-- Skills -->
-<h2>Technical Skills</h2>
-<div class="card">
-MATLAB, Signal Processing, Data Analysis, Electronics, Basic Programming
-</div>
-
-<!-- Publications -->
-<h2>Publications & Reports</h2>
-<div class="card">
-<p>Currently preparing research reports and publications.</p>
-</div>
-
-<!-- Contact -->
 <h2>Contact</h2>
 <div class="card">
 Email: <a href="mailto:wahyuazizheriyansyah@gmail.com">wahyuazizheriyansyah@gmail.com</a><br>
@@ -123,5 +51,14 @@ GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid">github.com/wahyu
 
 </div>
 
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<span onclick="closeModal()" class="close">&times;</span>
+<div id="modal-body"></div>
+</div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
