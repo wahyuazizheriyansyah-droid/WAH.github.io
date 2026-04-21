@@ -32,3 +32,17 @@ function openModal(key) {
 function closeModal() {
     document.getElementById("modal").style.display = "none";
 }
+// Tambahkan ini di bagian paling bawah script.js kamu
+window.onload = () => {
+    // Menjalankan fungsi update teks pertama kali
+    document.querySelectorAll("[data-en]").forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+    });
+};
+
+// Tambahan interaksi suara kecil saat klik (Opsional)
+function openModal(key) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modal-body").innerText = data[key][lang];
+    console.log("Astra: Mengakses modul " + key + "...");
+}
