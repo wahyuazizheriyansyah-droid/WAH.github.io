@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wahyu Azis | Portfolio</title>
+<title>Wahyu Azis | Research Portfolio</title>
 
 <style>
 :root {
@@ -13,101 +13,39 @@
     --accent: #3b82f6;
 }
 
-.light {
-    --bg: #ffffff;
-    --text: #111;
-    --card: #f3f4f6;
-}
-
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s;
 }
 
-/* Layout */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 40px 20px;
 }
 
-/* Navbar */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.toggle {
-    cursor: pointer;
-}
-
-/* Hero */
-.hero h1 {
-    font-size: 42px;
-    margin: 0;
-}
-
-.hero p {
-    opacity: 0.7;
-    margin-top: 10px;
-}
-
-/* Section */
-.section {
-    margin-top: 50px;
-}
+h1 { font-size: 40px; }
+h2 { margin-top: 50px; }
 
 .card {
     background: var(--card);
     padding: 20px;
-    border-radius: 12px;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-}
-
-/* Skills */
-.skill {
-    margin-top: 10px;
-}
-
-.bar {
-    height: 6px;
-    background: #333;
     border-radius: 10px;
-    overflow: hidden;
-}
-
-.fill {
-    height: 100%;
-    background: var(--accent);
-    width: 0;
-    transition: 1s;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
     margin-top: 15px;
-    padding: 10px 15px;
-    background: var(--accent);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
 }
 
-/* Links */
-a {
-    color: var(--accent);
-    text-decoration: none;
+.tag {
+    display: inline-block;
+    background: #1f2937;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 5px;
+    font-size: 12px;
 }
+
+a { color: var(--accent); }
 </style>
 </head>
 
@@ -115,91 +53,75 @@ a {
 
 <div class="container">
 
-<div class="nav">
-    <strong>WA</strong>
-    <div class="toggle" onclick="toggleMode()">🌙</div>
-</div>
+<h1>Wahyu Azis Heriyansyah</h1>
+<p>
+Physics Student — Aspiring Researcher in Drone Systems & Telecommunications
+</p>
 
-<div class="hero">
-    <h1>Wahyu Azis Heriyansyah</h1>
-    <p>Physics Student → Future Researcher in Drone & Telecommunications</p>
-</div>
-
-<div class="section">
-<h2>About</h2>
+<!-- Research Identity -->
+<h2>Research Identity</h2>
 <div class="card">
-Saya berfokus pada pengembangan teknologi drone, signal processing, dan energi terbarukan. 
-Saya tertarik membangun sistem berbasis data untuk aplikasi telekomunikasi modern.
-</div>
-</div>
-
-<div class="section">
-<h2>Skills</h2>
-
-<div class="skill">MATLAB & Signal Processing
-<div class="bar"><div class="fill" style="width:90%"></div></div>
+Saya adalah mahasiswa fisika dengan fokus pada pengembangan sistem drone,
+signal processing, dan integrasi teknologi telekomunikasi berbasis data.
+Tujuan saya adalah berkontribusi dalam riset teknologi otonom dan sistem cerdas.
 </div>
 
-<div class="skill">Electronics & Embedded
-<div class="bar"><div class="fill" style="width:80%"></div></div>
+<!-- Research Interest -->
+<h2>Research Interests</h2>
+<div class="card">
+<span class="tag">Drone Systems</span>
+<span class="tag">Signal Processing (FFT)</span>
+<span class="tag">Telecommunication</span>
+<span class="tag">Renewable Energy</span>
+<span class="tag">Embedded Systems</span>
 </div>
 
-<div class="skill">Data Analysis
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Projects</h2>
+<!-- Projects -->
+<h2>Research Projects</h2>
 
 <div class="card">
-<strong>FFT Analysis (MATLAB)</strong>
-<p>Analisis spektrum sinyal menggunakan Fast Fourier Transform.</p>
+<strong>FFT-Based Signal Analysis</strong>
+<p>
+Melakukan analisis spektrum sinyal menggunakan Fast Fourier Transform
+untuk memahami karakteristik frekuensi pada sistem komunikasi.
+</p>
 </div>
 
 <div class="card">
-<strong>Solar Panel Optimization</strong>
-<p>Optimasi efisiensi panel surya berbasis data lingkungan.</p>
+<strong>Solar Panel Efficiency Optimization</strong>
+<p>
+Menganalisis pengaruh intensitas cahaya dan kelembaban terhadap efisiensi
+panel surya menggunakan data real-time.
+</p>
 </div>
 
 <div class="card">
-<strong>Drone Hexacopter</strong>
-<p>Desain dan pengembangan sistem drone untuk riset.</p>
+<strong>Hexacopter Drone Development</strong>
+<p>
+Merancang dan mengembangkan sistem drone untuk aplikasi riset dan monitoring.
+</p>
 </div>
 
+<!-- Skills -->
+<h2>Technical Skills</h2>
+<div class="card">
+MATLAB, Signal Processing, Data Analysis, Electronics, Basic Programming
 </div>
 
-<div class="section">
+<!-- Publications -->
+<h2>Publications & Reports</h2>
+<div class="card">
+<p>Currently preparing research reports and publications.</p>
+</div>
+
+<!-- Contact -->
 <h2>Contact</h2>
 <div class="card">
 Email: <a href="mailto:wahyuazizheriyansyah@gmail.com">wahyuazizheriyansyah@gmail.com</a><br>
 GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid">github.com/wahyuazizheriyansyah-droid</a>
-<br><br>
-<a href="#" class="btn">Download CV</a>
-</div>
 </div>
 
 </div>
-
-<script>
-function toggleMode() {
-    document.body.classList.toggle("light");
-    localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
-}
-
-/* Load mode */
-if(localStorage.getItem("mode") === "light") {
-    document.body.classList.add("light");
-}
-
-/* Animate skills */
-window.addEventListener("load", () => {
-    document.querySelectorAll(".fill").forEach(el => {
-        el.style.width = el.style.width;
-    });
-});
-</script>
 
 </body>
 </html>
