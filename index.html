@@ -1,87 +1,205 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Wahyu Azis</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wahyu Azis | Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-        }
+<style>
+:root {
+    --bg: #0b0f19;
+    --text: #e6edf3;
+    --card: #111827;
+    --accent: #3b82f6;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: white;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+.light {
+    --bg: #ffffff;
+    --text: #111;
+    --card: #f3f4f6;
+}
 
-        h1 {
-            margin-bottom: 5px;
-        }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
 
-        h2 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-            margin-top: 20px;
-        }
+/* Layout */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        p {
-            line-height: 1.6;
-        }
+/* Navbar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
 
-        ul {
-            padding-left: 20px;
-        }
+.toggle {
+    cursor: pointer;
+}
 
-        .contact a {
-            text-decoration: none;
-            color: #0077cc;
-        }
+/* Hero */
+.hero h1 {
+    font-size: 42px;
+    margin: 0;
+}
 
-        .contact a:hover {
-            text-decoration: underline;
-        }
-    </style>
+.hero p {
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+/* Section */
+.section {
+    margin-top: 50px;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* Skills */
+.skill {
+    margin-top: 10px;
+}
+
+.bar {
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0;
+    transition: 1s;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: var(--accent);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Links */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
-    <h1>Wahyu Azis Heriyansyah</h1>
-    <p>Mahasiswa Fisika - Universitas Ahmad Dahlan</p>
 
-    <h2>Tentang Saya</h2>
-    <p>
-        Saya memiliki minat dalam bidang telekomunikasi, drone, dan energi terbarukan.
-        Saat ini saya fokus pada pengembangan kemampuan analisis data dan riset teknologi.
-    </p>
-
-    <h2>Skill</h2>
-    <ul>
-        <li>MATLAB & Simulasi</li>
-        <li>Analisis Data</li>
-        <li>Elektronika Dasar</li>
-    </ul>
-
-    <h2>Project</h2>
-    <ul>
-        <li>Analisis FFT menggunakan MATLAB</li>
-        <li>Optimasi Efisiensi Panel Surya</li>
-        <li>Pengembangan Sistem Drone</li>
-    </ul>
-
-    <h2>Kontak</h2>
-    <p class="contact">
-        Email: <a href="mailto:wahyuazizheriyansyah@gmail.com">wahyuazizheriyansyah@gmail.com</a><br>
-        GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid">https://github.com/wahyuazizheriyansyah-droid</a>
-    </p>
+<div class="nav">
+    <strong>WA</strong>
+    <div class="toggle" onclick="toggleMode()">🌙</div>
 </div>
+
+<div class="hero">
+    <h1>Wahyu Azis Heriyansyah</h1>
+    <p>Physics Student → Future Researcher in Drone & Telecommunications</p>
+</div>
+
+<div class="section">
+<h2>About</h2>
+<div class="card">
+Saya berfokus pada pengembangan teknologi drone, signal processing, dan energi terbarukan. 
+Saya tertarik membangun sistem berbasis data untuk aplikasi telekomunikasi modern.
+</div>
+</div>
+
+<div class="section">
+<h2>Skills</h2>
+
+<div class="skill">MATLAB & Signal Processing
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">Electronics & Embedded
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill">Data Analysis
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Projects</h2>
+
+<div class="card">
+<strong>FFT Analysis (MATLAB)</strong>
+<p>Analisis spektrum sinyal menggunakan Fast Fourier Transform.</p>
+</div>
+
+<div class="card">
+<strong>Solar Panel Optimization</strong>
+<p>Optimasi efisiensi panel surya berbasis data lingkungan.</p>
+</div>
+
+<div class="card">
+<strong>Drone Hexacopter</strong>
+<p>Desain dan pengembangan sistem drone untuk riset.</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Contact</h2>
+<div class="card">
+Email: <a href="mailto:wahyuazizheriyansyah@gmail.com">wahyuazizheriyansyah@gmail.com</a><br>
+GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid">github.com/wahyuazizheriyansyah-droid</a>
+<br><br>
+<a href="#" class="btn">Download CV</a>
+</div>
+</div>
+
+</div>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("light");
+    localStorage.setItem("mode", document.body.classList.contains("light") ? "light" : "dark");
+}
+
+/* Load mode */
+if(localStorage.getItem("mode") === "light") {
+    document.body.classList.add("light");
+}
+
+/* Animate skills */
+window.addEventListener("load", () => {
+    document.querySelectorAll(".fill").forEach(el => {
+        el.style.width = el.style.width;
+    });
+});
+</script>
 
 </body>
 </html>
