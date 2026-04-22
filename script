@@ -1,5 +1,4 @@
 function changeLanguage() {
-    // Mengambil nilai bahasa dari menu dropdown
     const lang = document.getElementById("langSelector").value;
     
     // Menerapkan terjemahan ke semua teks yang memiliki atribut data-[bahasa]
@@ -11,13 +10,13 @@ function changeLanguage() {
     });
 }
 
-// Menjalankan fungsi saat halaman pertama kali dimuat agar tidak kosong
-window.onload = () => {
+// Menjalankan fungsi saat halaman DOM selesai dimuat
+document.addEventListener("DOMContentLoaded", () => {
     changeLanguage();
-};
+});
 
 // Database terjemahan untuk Modal (Popup)
-const data = {
+const modalData = {
     drone: {
         id: "Desain menyeluruh mekanik drone dan GCS untuk pemetaan dan misi KRTI.",
         en: "End-to-end design of drone mechanics and GCS for mapping and KRTI missions.",
@@ -63,9 +62,17 @@ const data = {
 function openModal(key) {
     const lang = document.getElementById("langSelector").value;
     document.getElementById("modal").style.display = "block";
-    document.getElementById("modal-body").innerText = data[key][lang];
+    document.getElementById("modal-body").innerText = modalData[key][lang];
 }
 
 function closeModal() {
     document.getElementById("modal").style.display = "none";
+}
+
+// Tutup modal jika user klik di luar kotak popup
+window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target === modal) {
+        closeModal();
+    }
 }

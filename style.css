@@ -1,37 +1,121 @@
-/* Ganti bagian Academic Portal lama dengan ini */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0b0f19;
+    color: #e6edf3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 { margin-bottom: 15px; }
+h1 { color: #ffffff; }
+
+h2 {
+    color: #4fc3f7;
+    margin-top: 30px;
+    border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+    padding-bottom: 5px;
+}
+
+/* --- TOPBAR & DROPDOWN BAHASA --- */
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    background: #111827;
+    border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+.lang-select {
+    background: #0b0f19;
+    color: #4fc3f7;
+    border: 1px solid #4fc3f7;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+.lang-select option { background: #111827; color: #e6edf3; }
+
+/* --- KARTU PROYEK (CARDS) --- */
+.card {
+    background: #111827;
+    border: 1px solid rgba(79, 195, 247, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+.clickable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.2);
+    cursor: pointer;
+    border-color: #4fc3f7;
+}
+
+/* --- PROGRESS BAR (TELEMETRI) --- */
+.skill { margin-bottom: 15px; }
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+.progress-bar {
+    background: #1f2937;
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+}
+.progress {
+    background: #4fc3f7;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* --- ACADEMIC PORTAL --- */
 .academic-portal {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
 }
-
 .academic-category h4 {
     margin-bottom: 15px;
     font-size: 0.9em;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .subject-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.85em;
 }
-
-/* Teknik Leader Line agar Nilai Sejajar Sempurna */
 .subject-list li {
     display: flex;
     align-items: flex-end;
     margin-bottom: 10px;
 }
-
-.subject-list .subj {
-    flex: 0 1 auto;
-    color: #e6edf3;
-}
-
+.subject-list .subj { flex: 0 1 auto; color: #e6edf3; }
 .subject-list .leader {
     flex: 1 1 auto;
     border-bottom: 1px dotted rgba(79, 195, 247, 0.4);
@@ -39,10 +123,44 @@
     position: relative;
     top: -4px;
 }
-
 .subject-list .grade {
     flex: 0 1 auto;
     color: #4fc3f7;
     font-weight: bold;
     text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
 }
+
+/* --- MODAL (POPUP) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background-color: #111827;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #4fc3f7;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    color: #e6edf3;
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.2);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover { color: #4fc3f7; }
+
+a { color: #4fc3f7; text-decoration: none; }
+a:hover { text-decoration: underline; }
