@@ -76,3 +76,51 @@ h1, h2 {
     width: 60%;
     border-radius: 20px;
 }
+/* Telemetry Panel Styles */
+.telemetry-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Courier New', Courier, monospace; /* Font ala terminal/coding */
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #81d4fa;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(79, 195, 247, 0.1);
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+.progress {
+    height: 100%;
+    background: #4fc3f7;
+    box-shadow: 0 0 10px #4fc3f7, 0 0 20px #4fc3f7; /* Efek glowing / menyala */
+    border-radius: 4px;
+    /* Animasi saat halaman dimuat */
+    animation: load-progress 1.5s ease-out forwards;
+}
+
+@keyframes load-progress {
+    from { width: 0; }
+}
+
+/* Mengubah tampilan teks default agar tidak kosong */
+h1, h2, h3, p, span {
+    min-height: 1em; 
+}

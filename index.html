@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wahyu Azis | Research Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wahyu Azis | Research Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="topbar">
-   <button onclick="toggleLang()">🌐 EN/ID</button>
+    <button onclick="toggleLang()">🌐 EN/ID</button>
 </div>
 
 <div class="container">
 
-   <h1 data-en="Wahyu Azis Heriyansyah" data-id="Wahyu Azis Heriyansyah"></h1>
-   <h3 style="color: #4fc3f7;" data-en="Physics Researcher | Drone Mechanic & IoT Developer" data-id="Peneliti Fisika | Mekanik Drone & Pengembang IoT"></h3>
+    <h1 data-en="Wahyu Azis Heriyansyah" data-id="Wahyu Azis Heriyansyah">Wahyu Azis Heriyansyah</h1>
+    <h3 style="color: #4fc3f7;" data-en="Physics Researcher | Drone Mechanic & IoT Developer" data-id="Peneliti Fisika | Mekanik Drone & Pengembang IoT">Peneliti Fisika | Mekanik Drone & Pengembang IoT</h3>
 
-   <h2 data-en="Mission Log & Achievements" data-id="Catatan Misi & Prestasi"></h2>
-   <div class="card">
-      <p data-en="Undergraduate Physics Student with 2 years of experience in University Drone Research Team (2023-2025). Specializing in Ground Control Station (GCS) operations, mapping missions, and hardware integration." 
-         data-id="Mahasiswa Fisika dengan 2 tahun pengalaman di Tim Riset Drone Kampus (2023-2025). Spesialisasi pada operasi Ground Control Station (GCS), misi pemetaan, dan integrasi perangkat keras."></p>
-      <hr style="border-color: rgba(79, 195, 247, 0.2);">
-      <p><strong>🏆 KRTI 2024</strong> - 2nd Place (Juara 2) <br>
-         <strong>🏆 KRTI 2025</strong> - 3rd Place (Juara 3)</p>
-   </div>
+    <h2 data-en="Mission Log & Achievements" data-id="Catatan Misi & Prestasi">Catatan Misi & Prestasi</h2>
+    <div class="card">
+        <p data-en="Undergraduate Physics Student with 2 years of experience in University Drone Research Team (2023-2025). Specializing in Ground Control Station (GCS) operations, mapping missions, and hardware integration." 
+           data-id="Mahasiswa Fisika dengan 2 tahun pengalaman di Tim Riset Drone Kampus (2023-2025). Spesialisasi pada operasi Ground Control Station (GCS), misi pemetaan, dan integrasi perangkat keras.">
+           Mahasiswa Fisika dengan 2 tahun pengalaman di Tim Riset Drone Kampus (2023-2025). Spesialisasi pada operasi Ground Control Station (GCS), misi pemetaan, dan integrasi perangkat keras.
+        </p>
+        <hr style="border-color: rgba(79, 195, 247, 0.2);">
+        <p><strong>🏆 KRTI 2024</strong> - 2nd Place (Juara 2) <br>
+           <strong>🏆 KRTI 2025</strong> - 3rd Place (Juara 3)</p>
+    </div>
 
-   <h2 data-en="Core Capabilities" data-id="Kemampuan Inti"></h2>
-   <div class="card">
-      <p data-en="⚙️ Drone Mechanics & Design | 📡 GCS & Mapping | 🔌 PCB Design | 🌐 IoT Systems"
-         data-id="⚙️ Mekanik & Desain Drone | 📡 GCS & Pemetaan | 🔌 Desain PCB | 🌐 Sistem IoT"></p>
-   </div>
+    <h2 data-en="Core Capabilities (Telemetry)" data-id="Kemampuan Inti (Telemetri)">Kemampuan Inti (Telemetri)</h2>
+    <div class="card telemetry-panel">
+        <div class="skill">
+            <div class="skill-header">
+                <span data-en="⚙️ Drone Mechanics & Design" data-id="⚙️ Mekanik & Desain Drone">⚙️ Mekanik & Desain Drone</span>
+                <span>90%</span>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+        
+        <div class="skill">
+            <div class="skill-header">
+                <span data-en="📡 GCS & Mapping Missions" data-id="📡 GCS & Misi Pemetaan">📡 GCS & Misi Pemetaan</span>
+                <span>85%</span>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+        </div>
 
-   <h2 data-en="Orbital Projects" data-id="Proyek Orbital"></h2>
+        <div class="skill">
+            <div class="skill-header">
+                <span data-en="🔌 PCB Design" data-id="🔌 Desain PCB">🔌 Desain PCB</span>
+                <span>80%</span>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+        </div>
 
-   <div class="card clickable" onclick="openModal('drone')">
-      <strong>🚁 Drone Design & Development</strong>
-      <p data-en="Mechanics, framing, and flight systems." data-id="Mekanik, rangka, dan sistem penerbangan."></p>
-   </div>
+        <div class="skill">
+            <div class="skill-header">
+                <span data-en="🌐 IoT Systems" data-id="🌐 Sistem IoT">🌐 Sistem IoT</span>
+                <span>88%</span>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+        </div>
+    </div>
 
-   <div class="card clickable" onclick="openModal('iot')">
-      <strong>🌐 IoT Integration & PCB Design</strong>
-      <p data-en="Custom hardware and remote sensor systems." data-id="Perangkat keras kustom dan sistem sensor jarak jauh."></p>
-   </div>
+    <h2 data-en="Orbital Projects" data-id="Proyek Orbital">Proyek Orbital</h2>
 
-   <div class="card clickable" onclick="openModal('fft')">
-      <strong>📈 FFT Signal Analysis</strong>
-   <p data-en="Spectrum analyzer using MATLAB." data-id="Analisis spektrum menggunakan MATLAB."></p>
-   </div>
+    <div class="card clickable" onclick="openModal('drone')">
+        <strong>🚁 Drone Design & Development</strong>
+        <p data-en="Mechanics, framing, and flight systems." data-id="Mekanik, rangka, dan sistem penerbangan.">Mekanik, rangka, dan sistem penerbangan.</p>
+    </div>
 
-   <h2>Contact Communication</h2>
-   <div class="card">
-      Email: <a href="mailto:wahyuazizheriyansyah@gmail.com" style="color: #4fc3f7;">wahyuazizheriyansyah@gmail.com</a><br>
-      GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid" style="color: #4fc3f7;">github.com/wahyuazizheriyansyah-droid</a>
-   </div>
+    <div class="card clickable" onclick="openModal('iot')">
+        <strong>🌐 IoT Integration & PCB Design</strong>
+        <p data-en="Custom hardware and remote sensor systems." data-id="Perangkat keras kustom dan sistem sensor jarak jauh.">Perangkat keras kustom dan sistem sensor jarak jauh.</p>
+    </div>
 
+    <div class="card clickable" onclick="openModal('fft')">
+        <strong>📈 FFT Signal Analysis</strong>
+        <p data-en="Spectrum analyzer using MATLAB." data-id="Analisis spektrum menggunakan MATLAB.">Analisis spektrum menggunakan MATLAB.</p>
+    </div>
 
+    <h2>Contact Communication</h2>
+    <div class="card">
+        Email: <a href="mailto:wahyuazizheriyansyah@gmail.com" style="color: #4fc3f7;">wahyuazizheriyansyah@gmail.com</a><br>
+        GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid" style="color: #4fc3f7;">github.com/wahyuazizheriyansyah-droid</a>
+    </div>
 
 </div>
 
-<!-- MODAL -->
 <div id="modal" class="modal">
-<div class="modal-content">
-<span onclick="closeModal()" class="close">&times;</span>
-<div id="modal-body"></div>
-</div>
+    <div class="modal-content">
+        <span onclick="closeModal()" class="close">&times;</span>
+        <div id="modal-body"></div>
+    </div>
 </div>
 
 <script src="script.js"></script>
