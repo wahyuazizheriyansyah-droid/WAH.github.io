@@ -1,11 +1,24 @@
 let lang = "en";
 
-function toggleLang() {
-    lang = (lang === "en") ? "id" : "en";
+function updateLanguage() {
+    // Mencari semua elemen yang memiliki atribut data-en
     document.querySelectorAll("[data-en]").forEach(el => {
-        el.innerText = el.getAttribute(`data-${lang}`);
+        const newText = el.getAttribute(`data-${lang}`);
+        if (newText) {
+            el.innerText = newText;
+        }
     });
 }
+
+function toggleLang() {
+    lang = (lang === "en") ? "id" : "en";
+    updateLanguage();
+}
+
+// Menjalankan fungsi update bahasa pertama kali saat halaman dimuat (agar nama tidak kosong)
+window.onload = () => {
+    updateLanguage();
+};
 
 const data = {
     drone: {
@@ -14,15 +27,15 @@ const data = {
     },
     env_mon: {
         en: "Developing an IoT system to monitor air pollutants, temperature, and humidity, accessible through a mobile interface.",
-        id: "Mengembangkan sistem IoT untuk memonitor polutan udara, suhu, dan kelembapan yang dapat diakses melalui HP."
+        id: "Mengembangkan sistem IoT untuk memonitor polutan udara, suhu, dan kelembapan via HP."
     },
     soil_iot: {
         en: "An IoT solution that monitors soil conditions to classify them into productive or non-productive categories.",
-        id: "Solusi IoT yang memantau kondisi tanah untuk mengklasifikasikannya menjadi kategori produktif atau non-produktif."
+        id: "Solusi IoT yang memantau kondisi tanah untuk mengklasifikasikannya menjadi kategori produktif/non-produktif."
     },
     opamp: {
         en: "Designing Op-Amp circuits to transform square waves into triangle waves for signal processing.",
-        id: "Mendesain rangkaian Op-Amp untuk mengubah gelombang segi empat menjadi segitiga untuk pemrosesan sinyal."
+        id: "Mendesain rangkaian Op-Amp untuk mengubah gelombang segi empat menjadi segitiga."
     },
     fft: {
         en: "Analyzing signal frequency spectrums using FFT algorithms in MATLAB.",
@@ -37,29 +50,4 @@ function openModal(key) {
 
 function closeModal() {
     document.getElementById("modal").style.display = "none";
-}
-
-window.onload = toggleLang; // Menjalankan inisialisasi bahasa
-
-function openModal(key) {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("modal-body").innerText = data[key][lang];
-}
-
-function closeModal() {
-    document.getElementById("modal").style.display = "none";
-}
-// Tambahkan ini di bagian paling bawah script.js kamu
-window.onload = () => {
-    // Menjalankan fungsi update teks pertama kali
-    document.querySelectorAll("[data-en]").forEach(el => {
-        el.innerText = el.getAttribute(`data-${lang}`);
-    });
-};
-
-// Tambahan interaksi suara kecil saat klik (Opsional)
-function openModal(key) {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("modal-body").innerText = data[key][lang];
-    console.log("Astra: Mengakses modul " + key + "...");
 }
