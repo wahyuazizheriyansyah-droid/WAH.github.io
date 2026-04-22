@@ -5,73 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wahyu Azis | Mission Control</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya tambahan khusus untuk Dropdown Bahasa */
+        .lang-select {
+            background: #0b0f19;
+            color: #4fc3f7;
+            border: 1px solid #4fc3f7;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+        .lang-select option {
+            background: #111827;
+            color: #e6edf3;
+        }
+    </style>
 </head>
 <body>
 
-<div class="topbar"><button onclick="toggleLang()">🌐 EN/ID</button></div>
+<div class="topbar">
+    <select id="langSelector" class="lang-select" onchange="changeLanguage()">
+        <option value="id">🇮🇩 Bahasa Indonesia</option>
+        <option value="en">🇬🇧 English</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="ja">🇯🇵 日本語 (Japanese)</option>
+        <option value="zh">🇨🇳 中文 (Chinese)</option>
+        <option value="es">🇪🇸 Español</option>
+    </select>
+</div>
 
 <div class="container">
-    <h1 data-en="Wahyu Azis Heriyansyah" data-id="Wahyu Azis Heriyansyah">Wahyu Azis Heriyansyah</h1>
-    <h3 style="color: #4fc3f7;" data-en="Physics Researcher | Drone Mechanic & IoT Developer" data-id="Peneliti Fisika | Mekanik Drone & Pengembang IoT">Peneliti Fisika | Mekanik Drone & Pengembang IoT</h3>
+    <h1 data-id="Wahyu Azis Heriyansyah" data-en="Wahyu Azis Heriyansyah" data-de="Wahyu Azis Heriyansyah" data-ja="ワーユ・アジス・ヘリヤンシャー" data-zh="瓦尤·阿齐兹·赫里扬夏" data-es="Wahyu Azis Heriyansyah">Wahyu Azis Heriyansyah</h1>
+    
+    <h3 style="color: #4fc3f7;" 
+        data-id="Peneliti Fisika | Mekanik Drone & Pengembang IoT" 
+        data-en="Physics Researcher | Drone Mechanic & IoT Developer"
+        data-de="Physikforscher | Drohnenmechaniker & IoT-Entwickler"
+        data-ja="物理学研究者 | ドローン整備士 & IoT開発者"
+        data-zh="物理学研究员 | 无人机机械师与物联网开发者"
+        data-es="Investigador de Física | Mecánico de Drones y Desarrollador de IoT">
+        Peneliti Fisika | Mekanik Drone & Pengembang IoT
+    </h3>
 
-    <h2 data-en="Orbital Projects" data-id="Proyek Orbital">Proyek Orbital</h2>
+    <h2 data-id="Proyek Orbital" data-en="Orbital Projects" data-de="Orbitale Projekte" data-ja="軌道プロジェクト" data-zh="轨道项目" data-es="Proyectos Orbitales">Proyek Orbital</h2>
+    
     <div class="card clickable" onclick="openModal('drone')">
-        <strong>🚁 Drone Design & Development</strong>
-        <p data-en="Mechanics and flight systems for mapping missions." data-id="Mekanik dan sistem terbang untuk misi pemetaan.">Mekanik dan sistem terbang untuk misi pemetaan.</p>
+        <strong data-id="🚁 Desain & Pengembangan Drone" data-en="🚁 Drone Design & Development" data-de="🚁 Drohnendesign & Entwicklung" data-ja="🚁 ドローンの設計と開発" data-zh="🚁 无人机设计与开发" data-es="🚁 Diseño y Desarrollo de Drones">🚁 Desain & Pengembangan Drone</strong>
+        <p data-id="Mekanik dan sistem terbang untuk misi pemetaan." data-en="Mechanics and flight systems for mapping missions." data-de="Mechanik und Flugsysteme für Kartierungsmissionen." data-ja="マッピングミッション用のメカニクスと飛行システム。" data-zh="用于测绘任务的机械和飞行系统。" data-es="Mecánica y sistemas de vuelo para misiones de mapeo.">Mekanik dan sistem terbang untuk misi pemetaan.</p>
     </div>
+    
     <div class="card clickable" onclick="openModal('env_mon')">
-        <strong>🌍 Environmental Monitoring IoT</strong>
-        <p data-en="Real-time air quality, temp, and humidity via Mobile App." data-id="Monitoring polutan, suhu, dan kelembapan via HP.">Monitoring polutan, suhu, dan kelembapan via HP.</p>
+        <strong data-id="🌍 IoT Pemantauan Lingkungan" data-en="🌍 Environmental Monitoring IoT" data-de="🌍 Umweltüberwachung IoT" data-ja="🌍 環境監視 IoT" data-zh="🌍 环境监测物联网" data-es="🌍 IoT de Monitoreo Ambiental">🌍 IoT Pemantauan Lingkungan</strong>
+        <p data-id="Monitoring polutan, suhu, dan kelembapan via HP." data-en="Real-time air quality, temp, and humidity via Mobile App." data-de="Echtzeit-Luftqualität, Temperatur und Luftfeuchtigkeit per App." data-ja="アプリ経由のリアルタイム空気品質、温度、湿度監視。" data-zh="通过手机应用实时监测空气质量、温度和湿度。" data-es="Calidad del aire, temperatura y humedad en tiempo real vía App.">Monitoring polutan, suhu, dan kelembapan via HP.</p>
     </div>
+    
     <div class="card clickable" onclick="openModal('soil_iot')">
-        <strong>🌱 Smart Soil Classification</strong>
-        <p data-en="IoT for soil productivity analysis and classification." data-id="IoT untuk klasifikasi tanah produktif/non-produktif.">IoT untuk klasifikasi tanah produktif/non-produktif.</p>
+        <strong data-id="🌱 Klasifikasi Tanah Pintar" data-en="🌱 Smart Soil Classification" data-de="🌱 Intelligente Bodenklassifizierung" data-ja="🌱 スマート土壌分類" data-zh="🌱 智能土壤分类" data-es="🌱 Clasificación Inteligente de Suelo">🌱 Klasifikasi Tanah Pintar</strong>
+        <p data-id="IoT untuk klasifikasi tanah produktif/non-produktif." data-en="IoT for soil productivity analysis and classification." data-de="IoT zur Analyse und Klassifizierung der Bodenproduktivität." data-ja="土壌生産性の分析と分類のためのIoT。" data-zh="用于土壤生产力分析和分类的物联网。" data-es="IoT para análisis y clasificación de la productividad del suelo.">IoT untuk klasifikasi tanah produktif/non-produktif.</p>
     </div>
+    
     <div class="card clickable" onclick="openModal('opamp')">
-        <strong>⚡ Op-Amp Waveform Converter</strong>
-        <p data-en="Square to Triangle wave generator using Op-Amp circuits." data-id="Konversi gelombang segi empat ke segitiga via Op-Amp.">Konversi gelombang segi empat ke segitiga via Op-Amp.</p>
+        <strong data-id="⚡ Konverter Gelombang Op-Amp" data-en="⚡ Op-Amp Waveform Converter" data-de="⚡ Op-Amp Wellenwandler" data-ja="⚡ オペアンプ波形コンバータ" data-zh="⚡ 运算放大器波形转换器" data-es="⚡ Convertidor de Forma de Onda Op-Amp">⚡ Konverter Gelombang Op-Amp</strong>
+        <p data-id="Konversi gelombang segi empat ke segitiga via Op-Amp." data-en="Square to Triangle wave generator using Op-Amp circuits." data-de="Rechteck-zu-Dreieck-Wellengenerator mit Op-Amp-Schaltungen." data-ja="オペアンプ回路を使用した方形波から三角波へのジェネレータ。" data-zh="使用运算放大器电路的方波到三角波发生器。" data-es="Generador de onda cuadrada a triangular utilizando circuitos Op-Amp.">Konversi gelombang segi empat ke segitiga via Op-Amp.</p>
     </div>
+    
     <div class="card clickable" onclick="openModal('fft')">
-        <strong>📈 FFT Signal Analysis</strong>
-        <p data-en="Spectrum analyzer using MATLAB." data-id="Analisis spektrum menggunakan MATLAB.">Analisis spektrum menggunakan MATLAB.</p>
+        <strong data-id="📈 Analisis Sinyal FFT" data-en="📈 FFT Signal Analysis" data-de="📈 FFT-Signalanalyse" data-ja="📈 FFT信号解析" data-zh="📈 FFT 信号分析" data-es="📈 Análisis de Señal FFT">📈 Analisis Sinyal FFT</strong>
+        <p data-id="Analisis spektrum menggunakan MATLAB." data-en="Spectrum analyzer using MATLAB." data-de="Spektrumanalysator mit MATLAB." data-ja="MATLABを使用したスペクトルアナライザ。" data-zh="使用 MATLAB 的频谱分析仪。" data-es="Analizador de espectro utilizando MATLAB.">Analisis spektrum menggunakan MATLAB.</p>
     </div>
 
-    <h2 data-en="Core Capabilities (Telemetry)" data-id="Kemampuan Inti (Telemetri)">Kemampuan Inti (Telemetri)</h2>
+    <h2 data-id="Kemampuan Inti (Telemetri)" data-en="Core Capabilities (Telemetry)" data-de="Kernkompetenzen (Telemetrie)" data-ja="コア機能（テレメトリ）" data-zh="核心能力（遥测）" data-es="Capacidades Principales (Telemetría)">Kemampuan Inti (Telemetri)</h2>
     <div class="card telemetry-panel">
         <div class="skill">
             <div class="skill-header">
-                <span data-en="⚙️ Drone Mechanics & Design" data-id="⚙️ Mekanik & Desain Drone">⚙️ Mekanik & Desain Drone</span>
+                <span data-id="⚙️ Mekanik & Desain Drone" data-en="⚙️ Drone Mechanics & Design" data-de="⚙️ Drohnenmechanik & Design" data-ja="⚙️ ドローン力学と設計" data-zh="⚙️ 无人机力学与设计" data-es="⚙️ Mecánica y Diseño de Drones">⚙️ Mekanik & Desain Drone</span>
                 <span>90%</span>
             </div>
             <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
         </div>
         <div class="skill">
             <div class="skill-header">
-                <span data-en="📡 GCS & Mapping Missions" data-id="📡 GCS & Misi Pemetaan">📡 GCS & Misi Pemetaan</span>
+                <span data-id="📡 GCS & Misi Pemetaan" data-en="📡 GCS & Mapping Missions" data-de="📡 GCS & Kartierungsmissionen" data-ja="📡 GCSとマッピングミッション" data-zh="📡 GCS与测绘任务" data-es="📡 GCS y Misiones de Mapeo">📡 GCS & Misi Pemetaan</span>
                 <span>85%</span>
             </div>
             <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
         </div>
         <div class="skill">
             <div class="skill-header">
-                <span data-en="🔌 PCB Design & IoT Systems" data-id="🔌 Desain PCB & Sistem IoT">🔌 Desain PCB & Sistem IoT</span>
+                <span data-id="🔌 Desain PCB & Sistem IoT" data-en="🔌 PCB Design & IoT Systems" data-de="🔌 PCB-Design & IoT-Systeme" data-ja="🔌 PCB設計とIoTシステム" data-zh="🔌 PCB设计与物联网系统" data-es="🔌 Diseño de PCB y Sistemas IoT">🔌 Desain PCB & Sistem IoT</span>
                 <span>88%</span>
             </div>
             <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
         </div>
     </div>
 
-    <h2 data-en="Mission Log & Achievements" data-id="Catatan Misi & Prestasi">Catatan Misi & Prestasi</h2>
+    <h2 data-id="Catatan Misi & Prestasi" data-en="Mission Log & Achievements" data-de="Missionsprotokoll & Erfolge" data-ja="ミッションログと実績" data-zh="任务日志与成就" data-es="Registro de Misiones y Logros">Catatan Misi & Prestasi</h2>
     <div class="card">
-        <p data-en="2 years in University Drone Research Team (2023-2025). Specialist in GCS and Hardware Integration." 
-           data-id="2 tahun di Tim Riset Drone Kampus (2023-2025). Spesialis GCS dan Integrasi Perangkat Keras.">
+        <p data-id="2 tahun di Tim Riset Drone Kampus (2023-2025). Spesialis GCS dan Integrasi Perangkat Keras." 
+           data-en="2 years in University Drone Research Team (2023-2025). Specialist in GCS and Hardware Integration."
+           data-de="2 Jahre im Drohnen-Forschungsteam der Universität. Spezialist für GCS und Hardware-Integration."
+           data-ja="大学のドローン研究チームでの2年間。GCSとハードウェア統合のスペシャリスト。"
+           data-zh="在大学无人机研究团队工作2年。GCS和硬件集成专家。"
+           data-es="2 años en el Equipo de Investigación de Drones. Especialista en GCS e Integración de Hardware.">
            2 tahun di Tim Riset Drone Kampus (2023-2025). Spesialis GCS dan Integrasi Perangkat Keras.
         </p>
         <hr style="border-color: rgba(79, 195, 247, 0.2); margin: 15px 0;">
-        <p><strong>🏆 KRTI 2024</strong> - Juara 2 <br><strong>🏆 KRTI 2025</strong> - Juara 3</p>
+        <p><strong data-id="🏆 KRTI 2024 - Juara 2" data-en="🏆 KRTI 2024 - 2nd Place" data-de="🏆 KRTI 2024 - 2. Platz" data-ja="🏆 KRTI 2024 - 第2位" data-zh="🏆 KRTI 2024 - 第二名" data-es="🏆 KRTI 2024 - 2do Lugar">🏆 KRTI 2024 - Juara 2</strong> <br>
+           <strong data-id="🏆 KRTI 2025 - Juara 3" data-en="🏆 KRTI 2025 - 3rd Place" data-de="🏆 KRTI 2025 - 3. Platz" data-ja="🏆 KRTI 2025 - 第3位" data-zh="🏆 KRTI 2025 - 第三名" data-es="🏆 KRTI 2025 - 3er Lugar">🏆 KRTI 2025 - Juara 3</strong></p>
     </div>
 
-    <h2 data-en="Academic Portal: Mission Transcript" data-id="Portal Akademik: Transkrip Misi">Portal Akademik: Transkrip Misi</h2>
+    <h2 data-id="Portal Akademik: Transkrip Misi" data-en="Academic Portal: Mission Transcript" data-de="Akademisches Portal: Missionsprotokoll" data-ja="学術ポータル：成績証明書" data-zh="学术门户：成绩单" data-es="Portal Académico: Expediente">Portal Akademik: Transkrip Misi</h2>
     <div class="card academic-portal">
         <div class="academic-category">
             <h4 style="color: #4fc3f7;">📡 Applied Engineering</h4>
@@ -101,7 +147,7 @@
         </div>
     </div>
 
-    <h2>Contact Communication</h2>
+    <h2 data-id="Komunikasi & Kontak" data-en="Contact & Communication" data-de="Kontakt & Kommunikation" data-ja="連絡先とコミュニケーション" data-zh="联系与沟通" data-es="Contacto y Comunicación">Contact Communication</h2>
     <div class="card">
         Email: <a href="mailto:wahyuazizheriyansyah@gmail.com" style="color: #4fc3f7;">wahyuazizheriyansyah@gmail.com</a><br>
         GitHub: <a href="https://github.com/wahyuazizheriyansyah-droid" style="color: #4fc3f7;">github.com/wahyuazizheriyansyah-droid</a>

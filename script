@@ -1,7 +1,8 @@
-let lang = "en";
-
-function updateLanguage() {
-    // Mencari semua elemen yang memiliki atribut data-en
+function changeLanguage() {
+    // Mengambil nilai bahasa dari menu dropdown
+    const lang = document.getElementById("langSelector").value;
+    
+    // Menerapkan terjemahan ke semua teks yang memiliki atribut data-[bahasa]
     document.querySelectorAll("[data-en]").forEach(el => {
         const newText = el.getAttribute(`data-${lang}`);
         if (newText) {
@@ -10,40 +11,57 @@ function updateLanguage() {
     });
 }
 
-function toggleLang() {
-    lang = (lang === "en") ? "id" : "en";
-    updateLanguage();
-}
-
-// Menjalankan fungsi update bahasa pertama kali saat halaman dimuat (agar nama tidak kosong)
+// Menjalankan fungsi saat halaman pertama kali dimuat agar tidak kosong
 window.onload = () => {
-    updateLanguage();
+    changeLanguage();
 };
 
+// Database terjemahan untuk Modal (Popup)
 const data = {
     drone: {
+        id: "Desain menyeluruh mekanik drone dan GCS untuk pemetaan dan misi KRTI.",
         en: "End-to-end design of drone mechanics and GCS for mapping and KRTI missions.",
-        id: "Desain menyeluruh mekanik drone dan GCS untuk pemetaan dan misi KRTI."
+        de: "Durchgängiges Design von Drohnenmechanik und GCS für Kartierungs- und KRTI-Missionen.",
+        ja: "マッピングおよびKRTIミッションのためのドローンメカニクスとGCSのエンドツーエンド設計。",
+        zh: "用于测绘和 KRTI 任务的无人机力学和地面控制站的端到端设计。",
+        es: "Diseño integral de mecánica de drones y GCS para misiones de mapeo y KRTI."
     },
     env_mon: {
-        en: "Developing an IoT system to monitor air pollutants, temperature, and humidity, accessible through a mobile interface.",
-        id: "Mengembangkan sistem IoT untuk memonitor polutan udara, suhu, dan kelembapan via HP."
+        id: "Mengembangkan sistem IoT untuk memonitor polutan udara, suhu, dan kelembapan via HP.",
+        en: "Developing an IoT system to monitor air pollutants, temperature, and humidity via Mobile App.",
+        de: "Entwicklung eines IoT-Systems zur Überwachung von Luftschadstoffen, Temperatur und Luftfeuchtigkeit per App.",
+        ja: "モバイルアプリを介して大気汚染物質、温度、湿度を監視するIoTシステムの開発。",
+        zh: "开发一个物联网系统，通过手机应用程序监测空气污染物、温度和湿度。",
+        es: "Desarrollo de un sistema IoT para monitorear contaminantes del aire, temperatura y humedad a través del móvil."
     },
     soil_iot: {
+        id: "Solusi IoT yang memantau kondisi tanah untuk mengklasifikasikannya menjadi kategori produktif/non-produktif.",
         en: "An IoT solution that monitors soil conditions to classify them into productive or non-productive categories.",
-        id: "Solusi IoT yang memantau kondisi tanah untuk mengklasifikasikannya menjadi kategori produktif/non-produktif."
+        de: "Eine IoT-Lösung, die Bodenbedingungen überwacht, um sie in produktive oder nicht produktive Kategorien einzuteilen.",
+        ja: "土壌の状態を監視し、生産的または非生産的なカテゴリに分類するIoTソリューション。",
+        zh: "一种物联网解决方案，用于监测土壤条件并将其分类为生产性或非生产性类别。",
+        es: "Una solución IoT que monitorea las condiciones del suelo para clasificarlas en categorías productivas o no productivas."
     },
     opamp: {
+        id: "Mendesain rangkaian Op-Amp untuk mengubah gelombang segi empat menjadi segitiga.",
         en: "Designing Op-Amp circuits to transform square waves into triangle waves for signal processing.",
-        id: "Mendesain rangkaian Op-Amp untuk mengubah gelombang segi empat menjadi segitiga."
+        de: "Entwurf von Op-Amp-Schaltungen zur Umwandlung von Rechteckwellen in Dreieckwellen.",
+        ja: "方形波を三角波に変換するオペアンプ回路の設計。",
+        zh: "设计运算放大器电路，将方波转换为三角波用于信号处理。",
+        es: "Diseño de circuitos Op-Amp para transformar ondas cuadradas en ondas triangulares."
     },
     fft: {
+        id: "Menganalisis spektrum frekuensi sinyal menggunakan algoritma FFT di MATLAB.",
         en: "Analyzing signal frequency spectrums using FFT algorithms in MATLAB.",
-        id: "Menganalisis spektrum frekuensi sinyal menggunakan algoritma FFT di MATLAB."
+        de: "Analyse von Signalfrequenzspektren mit FFT-Algorithmen in MATLAB.",
+        ja: "MATLABのFFTアルゴリズムを使用した信号周波数スペクトルの分析。",
+        zh: "在 MATLAB 中使用 FFT 算法分析信号频谱。",
+        es: "Análisis de espectros de frecuencia de señales utilizando algoritmos FFT en MATLAB."
     }
 };
 
 function openModal(key) {
+    const lang = document.getElementById("langSelector").value;
     document.getElementById("modal").style.display = "block";
     document.getElementById("modal-body").innerText = data[key][lang];
 }
