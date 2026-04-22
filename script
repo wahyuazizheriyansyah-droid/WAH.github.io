@@ -9,18 +9,19 @@ function toggleLang() {
 }
 
 /* Modal content */
+/* Modal content / Database Modul */
 const data = {
     fft: {
-        en: "FFT analysis using MATLAB to analyze signal frequency spectrum.",
-        id: "Analisis FFT menggunakan MATLAB untuk spektrum frekuensi sinyal."
-    },
-    solar: {
-        en: "Analyzing solar panel efficiency based on light and humidity.",
-        id: "Analisis efisiensi panel surya berdasarkan cahaya dan kelembaban."
+        en: "Processing and analyzing signal frequency spectrums using Fast Fourier Transform (FFT) in MATLAB.",
+        id: "Memproses dan menganalisis spektrum frekuensi sinyal menggunakan Fast Fourier Transform (FFT) di MATLAB."
     },
     drone: {
-        en: "Design and development of hexacopter drone system.",
-        id: "Desain dan pengembangan drone hexacopter."
+        en: "End-to-end design and mechanical development of custom drone systems for mapping, GCS integration, and autonomous missions. Proven track record in national competitions (KRTI).",
+        id: "Desain menyeluruh dan pengembangan mekanik sistem drone kustom untuk pemetaan, integrasi GCS, dan misi otonom. Terbukti dalam kompetisi nasional (KRTI)."
+    },
+    iot: {
+        en: "Developing Internet of Things (IoT) systems equipped with custom PCB designs for telemetry, remote sensing, and efficient hardware integration.",
+        id: "Mengembangkan sistem Internet of Things (IoT) yang dilengkapi dengan desain PCB kustom untuk telemetri, penginderaan jarak jauh, dan integrasi perangkat keras."
     }
 };
 
