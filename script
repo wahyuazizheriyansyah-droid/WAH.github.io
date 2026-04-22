@@ -2,28 +2,44 @@ let lang = "en";
 
 function toggleLang() {
     lang = (lang === "en") ? "id" : "en";
-
     document.querySelectorAll("[data-en]").forEach(el => {
         el.innerText = el.getAttribute(`data-${lang}`);
     });
 }
 
-/* Modal content */
-/* Modal content / Database Modul */
 const data = {
-    fft: {
-        en: "Processing and analyzing signal frequency spectrums using Fast Fourier Transform (FFT) in MATLAB.",
-        id: "Memproses dan menganalisis spektrum frekuensi sinyal menggunakan Fast Fourier Transform (FFT) di MATLAB."
-    },
     drone: {
-        en: "End-to-end design and mechanical development of custom drone systems for mapping, GCS integration, and autonomous missions. Proven track record in national competitions (KRTI).",
-        id: "Desain menyeluruh dan pengembangan mekanik sistem drone kustom untuk pemetaan, integrasi GCS, dan misi otonom. Terbukti dalam kompetisi nasional (KRTI)."
+        en: "End-to-end design of drone mechanics and GCS for mapping and KRTI missions.",
+        id: "Desain menyeluruh mekanik drone dan GCS untuk pemetaan dan misi KRTI."
     },
-    iot: {
-        en: "Developing Internet of Things (IoT) systems equipped with custom PCB designs for telemetry, remote sensing, and efficient hardware integration.",
-        id: "Mengembangkan sistem Internet of Things (IoT) yang dilengkapi dengan desain PCB kustom untuk telemetri, penginderaan jarak jauh, dan integrasi perangkat keras."
+    env_mon: {
+        en: "Developing an IoT system to monitor air pollutants, temperature, and humidity, accessible through a mobile interface.",
+        id: "Mengembangkan sistem IoT untuk memonitor polutan udara, suhu, dan kelembapan yang dapat diakses melalui HP."
+    },
+    soil_iot: {
+        en: "An IoT solution that monitors soil conditions to classify them into productive or non-productive categories.",
+        id: "Solusi IoT yang memantau kondisi tanah untuk mengklasifikasikannya menjadi kategori produktif atau non-produktif."
+    },
+    opamp: {
+        en: "Designing Op-Amp circuits to transform square waves into triangle waves for signal processing.",
+        id: "Mendesain rangkaian Op-Amp untuk mengubah gelombang segi empat menjadi segitiga untuk pemrosesan sinyal."
+    },
+    fft: {
+        en: "Analyzing signal frequency spectrums using FFT algorithms in MATLAB.",
+        id: "Menganalisis spektrum frekuensi sinyal menggunakan algoritma FFT di MATLAB."
     }
 };
+
+function openModal(key) {
+    document.getElementById("modal").style.display = "block";
+    document.getElementById("modal-body").innerText = data[key][lang];
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+window.onload = toggleLang; // Menjalankan inisialisasi bahasa
 
 function openModal(key) {
     document.getElementById("modal").style.display = "block";
